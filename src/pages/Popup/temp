@@ -1,0 +1,19 @@
+//  if (
+//       winWidth > displayInfo.workArea.width ||
+//       winHeight > displayInfo.workArea.height
+//     )
+//       return;
+//     const window = await chrome.windows.getCurrent();
+//     await chrome.windows.update(window.id, { state: 'maximized' });
+
+//     await chrome.windows.update(window.id, {
+//       top: 0,
+//       left: 0,
+//       width: winWidth,
+//       height: winHeight + decorHeight,
+//     });
+//     const zoomFactor = Math.ceil((winWidth / 1920) * 100);
+//     setWinZoom(zoomFactor);
+//     setZoom(zoomFactor);
+
+//     await chrome.windows.update(window.id, { state: 'normal' });

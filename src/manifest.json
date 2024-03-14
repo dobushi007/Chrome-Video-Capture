@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Screenspace.io",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx1ued448l7XCt1d+Oo+vofnANEwfbSVuv/thtYxEIqd5xyL/mwdehWkp7DRgUDJmjnDHiJ5oFY76BBqL9i6HlhqreU9QYjCJNBvF16p6tSdSENE4EwYb4duYREqSjnc/TlcgS44em+y5Op30ah3yFZF8VPj7bxcsYb9mlyHGlRryJMRNO+5Yp9eE3aYK2MIbQJfmNuW+bD9Kp4NsrudPwONSUFVe9fH4Gbah4L6CtoiY+D+432fALbuxV05U3btw6dlZvN75ImfkSAIyPaNyrUI1c05N95euWTeBGakC/pW9AapPpRzbbbyQGty80jkzUEfLWL02fDX1yb2L+YFNZQIDAQAB",
+  "permissions": [
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "system.display",
+    "tabs",
+    "scripting",
+    "tabCapture",
+    "activeTab",
+    "offscreen",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "description": "A chrome extension for recording product demos with ScreenSpace.io",
+  "options_page": "options.html",
+  "background": { "service_worker": "background.bundle.js" },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png",
+    "512": "icon-512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.styles.css",
+        "icon-16.png",
+        "icon-32.png",
+        "icon-48.png",
+        "icon-16.png",
+        "icon-128.png",
+        "icon-512.png",
+        "icon-16-recording.png",
+        "icon-32-recording.png",
+        "icon-48-recording.png",
+        "icon-16-recording.png",
+        "icon-128-recording.png",
+        "icon-512-recording.png",
+        "tailwind.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
